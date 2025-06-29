@@ -25,4 +25,4 @@ jobs:
       - name: HOLA MUNDO tres
         run: echo "HolaMundo3" 
       - name: generar carpeta  
-        run: echo "Hola ${{ github.user }}"
+        run: echo "Hola ${{ github.actor }}"
