@@ -9,8 +9,12 @@ jobs:
     name: "Primer Hola"
     runs-on: ubuntu-latest
     steps: 
-      - name: HOLA MUNDO
-        run: echo "Hola Mundo"
+      - name: Working dir
+        run: ls -al
+      - name: action
+        uses: actions/checkout@v4
+      - name: Working dir after
+        run: ls -al
   second-job:
     name: "Segundo Hola"
     env:
