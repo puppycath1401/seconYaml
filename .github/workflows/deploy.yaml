@@ -6,11 +6,13 @@ on:
 
 jobs:
   first-job:
+    name: "Primer Hola"
     runs-on: ubuntu-latest
     steps: 
       - name: HOLA MUNDO
         run: echo "Hola Mundo"
   second-job:
+    name: "Segundo Hola"
     env:
       test: michi
     needs: first-job
