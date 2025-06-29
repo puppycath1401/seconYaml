@@ -11,11 +11,13 @@ jobs:
       - name: HOLA MUNDO
         run: echo "Hola Mundo"
   second-job:
+    env:
+      test: michi
     needs: first-job
     runs-on: ubuntu-latest
     steps:
       - name: HOLA MUNDO DOS
-        run: echo "HolaMundo2" 
+        run: echo "HolaMundo2 $test" 
       - name: listar 
         run: ls -ltr
   third-job:
