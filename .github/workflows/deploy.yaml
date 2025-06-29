@@ -19,10 +19,10 @@ jobs:
       - name: listar 
         run: ls -ltr
   third-job:
-    if: false
+    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     steps:
       - name: HOLA MUNDO tres
         run: echo "HolaMundo3" 
       - name: generar carpeta  
-        run: ls -ltr
+        run: echo ${{ github.user }}
