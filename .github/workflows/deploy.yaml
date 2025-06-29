@@ -19,7 +19,7 @@ jobs:
       - name: listar 
         run: ls -ltr
   third-job:
-    needs: second-job
+    if: false
     runs-on: ubuntu-latest
     steps:
       - name: HOLA MUNDO tres
