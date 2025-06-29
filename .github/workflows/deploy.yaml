@@ -1,0 +1,13 @@
+name: deploy a prod
+
+on:
+  push: 
+    branches: master
+
+jobs:
+  first-job:
+    build:
+      runs-on: ubuntu-latest
+    steps: 
+      - name: HOLA MUNDO
+      - run: echo "Hola Mundo"
