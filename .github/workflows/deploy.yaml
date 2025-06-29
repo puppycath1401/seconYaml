@@ -14,5 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: HOLA MUNDO DOS
-        run: echo "HolaMundo2"  |
-            ls
+        run: echo "HolaMundo2" 
+      - name: listar 
+        run: ls -ltr
