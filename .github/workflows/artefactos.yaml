@@ -16,7 +16,7 @@ jobs:
       - name: Working dir
         run : |
           echo "Archivo prueba, hola" >> test.log
-      - name: Subir artefactp
+      - name: Subir artefacto
         uses: actions/upload-artifact@v4
         with:
           name: archivotest
