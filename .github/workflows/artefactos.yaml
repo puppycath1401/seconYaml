@@ -6,7 +6,7 @@ on:
 
 jobs:
   first-job:
-    name: "Primer Hola"
+    name: "Crear Artefacto"
     env: 
       michi: version1
     runs-on: ubuntu-latest
@@ -21,4 +21,13 @@ jobs:
         with:
           name: archivotest
           path: test.log
-    
+    second-job:
+    name: "Descargar Artefacto"
+    runs-on: ubuntu-latest
+    outputs: 
+      salida: ${{ steps.step_02.outputs.michiTest }}
+    steps:
+      - name: descargarTest
+        uses: actions/download-artifact@
+        with:
+          name: test
