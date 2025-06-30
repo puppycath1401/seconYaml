@@ -28,9 +28,9 @@ jobs:
   second-job:
     name: "Segundo Hola"
     env:
-      test: michi
+      SALIDA: {{ needs.first-job.outputs.salida }}
     needs: first-job
     runs-on: ubuntu-latest
     steps:
       - name: Revisamos VAR TEST
-        run: echo "${{ jobs.first-job.outputs.michiTest }} 5.5"
+        run: echo "$SALIDA 5.5"
