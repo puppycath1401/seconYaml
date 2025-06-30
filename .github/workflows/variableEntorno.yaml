@@ -10,6 +10,8 @@ jobs:
     env: 
       michi: version1
     runs-on: ubuntu-latest
+    outputs: 
+      salida: ${{ steps.step_02.outputs.michiTest }}
     steps: 
       - name: Working dir
         id: step_01
@@ -31,4 +33,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Revisamos VAR TEST
-        run: echo "Hola"
+        run: echo "${{ jobs.first-job.outputs.michiTest }} 5.5"
