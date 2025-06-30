@@ -17,6 +17,7 @@ jobs:
 
       - name: PASAMOS VAR TEST
         run: echo "michiTest=version" >> $GITHUB_OUTPUT
+        run: echo "$michiTest" >> $GITHUB_OUTPUT
 
       - name: Recibimos VAR TEST
         run: echo "${{ steps.step_01.outputs.michiTest }}"
