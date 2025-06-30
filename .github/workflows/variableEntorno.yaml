@@ -1,0 +1,24 @@
+name: deploy a prod
+
+on:
+  push: 
+    branches: master
+
+jobs:
+  first-job:
+    name: "Primer Hola"
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Working dir
+        run: echo "$GITHUB_OUTPUT"
+  second-job:
+    name: "Segundo Hola"
+    env:
+      test: michi
+    needs: first-job
+    runs-on: ubuntu-latest
+    steps:
+      - name: HOLA MUNDO DOS
+        run: echo "HolaMundo2 $test" 
+      - name: listar 
+        run: ls -ltr
