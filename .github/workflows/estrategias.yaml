@@ -1,0 +1,16 @@
+name: estrategias
+
+on:
+  push: 
+    branches: master
+
+jobs:
+  first-job:
+    name: "Estrategia"
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        message: ["Michi", "arwen", "Ivan"]
+    steps: 
+      - name: print message
+        run: echo "hola ${{ matrix.message }}"
