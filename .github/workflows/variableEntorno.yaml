@@ -16,12 +16,13 @@ jobs:
         run: echo "$GITHUB_OUTPUT"
 
       - name: PASAMOS VAR TEST
+        id: step_02
         run: echo "michiTest=version" >> $GITHUB_OUTPUT
       - name: Imprimo Var
-        run: echo "$michiTest"
+        run: echo "michiTest"
 
       - name: Recibimos VAR TEST
-        run: echo "${{ steps.step_01.outputs.michiTest }}"
+        run: echo "${{ steps.step_02.outputs.michiTest }}"
   second-job:
     name: "Segundo Hola"
     env:
