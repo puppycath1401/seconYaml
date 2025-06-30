@@ -21,15 +21,13 @@ jobs:
         with:
           name: archivotest
           path: test.log
-    second-job:
+  second-job:
     name: "Descargar Artefacto"
     runs-on: ubuntu-latest
-    outputs: 
-      salida: ${{ steps.step_02.outputs.michiTest }}
     steps:
       - name: descargarTest
         uses: actions/download-artifact@
         with:
-          name: test
+          name: archivotest
       - name: verarchivo
         run: cat test.log
