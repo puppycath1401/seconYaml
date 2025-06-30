@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: descargarTest
-        uses: actions/download-artifact@
+        uses: actions/download-artifact@v4
         with:
           name: archivotest
       - name: verarchivo
