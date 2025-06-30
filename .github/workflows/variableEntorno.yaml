@@ -7,10 +7,14 @@ on:
 jobs:
   first-job:
     name: "Primer Hola"
+    env: 
+      michi: version1
     runs-on: ubuntu-latest
     steps: 
       - name: Working dir
         run: echo "$GITHUB_OUTPUT"
+      - name: PASAMOS VAR TEST
+        run: echo " $michi" >> $GITHUB_OUTPUT
   second-job:
     name: "Segundo Hola"
     env:
@@ -18,7 +22,6 @@ jobs:
     needs: first-job
     runs-on: ubuntu-latest
     steps:
-      - name: HOLA MUNDO DOS
-        run: echo "HolaMundo2 $test" 
-      - name: listar 
-        run: ls -ltr
+      - name: Revisamos VAR TEST
+        run: echo "$GITHUB_OUTPUT"
+  second-job:
