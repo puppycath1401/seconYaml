@@ -12,9 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Working dir
+        id: step_01
         run: echo "$GITHUB_OUTPUT"
       - name: PASAMOS VAR TEST
-        run: echo " $michi" >> $GITHUB_OUTPUT
+        run: echo " var michiTest=$michi" >> $GITHUB_OUTPUT
+      - name: Recibimos VAR TEST
+        run: echo "${{steps.step_01}}
   second-job:
     name: "Segundo Hola"
     env:
@@ -23,5 +26,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Revisamos VAR TEST
-        run: echo "$GITHUB_OUTPUT"
+        run: echo "Hola"
   second-job:
