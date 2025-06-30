@@ -1,4 +1,4 @@
-name: deploy a prod
+name: artefacto
 
 on:
   push: 
