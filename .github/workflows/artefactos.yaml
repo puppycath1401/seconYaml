@@ -31,3 +31,5 @@ jobs:
         uses: actions/download-artifact@
         with:
           name: test
+      - name: verarchivo
+        run: cat test.log
