@@ -17,7 +17,7 @@ jobs:
       - name: PASAMOS VAR TEST
         run: echo " var michiTest=$michi" >> $GITHUB_OUTPUT
       - name: Recibimos VAR TEST
-        run: echo "${{steps.step_01}}
+        run: echo "${{steps.step_01.outputs.michiTest}}
   second-job:
     name: "Segundo Hola"
     env:
@@ -27,4 +27,3 @@ jobs:
     steps:
       - name: Revisamos VAR TEST
         run: echo "Hola"
-  second-job:
